@@ -1,0 +1,1 @@
+module.exports.jwtAuthHelper = require('./jwt_auth_helper');
