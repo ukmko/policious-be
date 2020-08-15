@@ -4,12 +4,17 @@ const express = require('express');
 const config = require('./config');
 const routes = require('./routes');
 
-const { logger } = require('./helpers');
+const {
+  logger,
+  mongoDbConn,
+} = require('./helpers');
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
+
+mongoDbConn();
 
 routes(app);
 
