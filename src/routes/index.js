@@ -1,11 +1,13 @@
-const { jwtAuthHelper } = require('../auth');
 const healthcheck = require('./healthcheck');
+const user = require('./user');
 
-// No auth 
 const routers = [healthcheck];
+const userRoutes = [...user];
 
 module.exports = (app) => {
   routers.forEach((router) => app.use(router));
 
-  app.use(jwtAuthHelper.verifyToken);
+  userRoutes.forEach((router) => {
+    app.use('/users', router);
+  });
 };

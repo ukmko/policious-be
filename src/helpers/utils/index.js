@@ -1,3 +1,4 @@
-module.exports.logger = require('./logger');
-module.exports.wrapper = require('./wrapper');
 module.exports.asyncHandler = require('./asyncHandler');
+module.exports.logger = require('./logger');
+module.exports.regex = require('./regex');
+module.exports.wrapper = require('./wrapper');
